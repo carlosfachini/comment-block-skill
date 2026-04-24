@@ -1,6 +1,6 @@
 # Comment Block
 
-Comment Block is an installable AI coding skill for adding structured comment blocks around features, sections, and logical code areas in any codebase.
+Comment Block is an installable AI coding skill for adding structured, visually framed comment blocks around features, sections, and logical code areas in any codebase.
 
 It is designed for AI coding tools, CLIs, and agents that can read a `SKILL.md` file or reusable instruction pack while editing code.
 
@@ -10,7 +10,7 @@ Comment Block helps an AI agent:
 
 - detect the language or framework from file path and content;
 - choose valid comment syntax for that context;
-- insert a structured start/end comment around the intended block;
+- insert a structured start/end comment with a `#` border and `||` side rails around the intended block;
 - include type, title, date, optional author, and body;
 - avoid syntax-sensitive positions such as strings, JSX props, invalid JSON locations, and template attributes;
 - ask for confirmation or clarification when the insertion point is ambiguous.
@@ -131,10 +131,13 @@ Without author:
 
 ```js
 /* [START: FEATURE]
-Title: FINAL PRICE CALCULATION
-Date: 2026-04-24
-
-Centralizes subtotal, discount, and total rules displayed in the summary.
+########################################################################
+|| Title: FINAL PRICE CALCULATION                                     ||
+|| Date: 2026-04-24                                                   ||
+||                                                                    ||
+|| Centralizes subtotal, discount, and total rules displayed in the   ||
+|| summary.                                                           ||
+########################################################################
 [END: FEATURE] */
 function calculateFinalPrice() {
   // ...
@@ -145,11 +148,14 @@ With author:
 
 ```tsx
 {/* [START: FEATURE]
-Title: FINAL PRICE CALCULATION
-Date: 2026-04-24
-Author: Carlos
-
-Centralizes subtotal, discount, and total rules displayed in the summary.
+########################################################################
+|| Title: FINAL PRICE CALCULATION                                     ||
+|| Date: 2026-04-24                                                   ||
+|| Author: Carlos                                                     ||
+||                                                                    ||
+|| Centralizes subtotal, discount, and total rules displayed in the   ||
+|| summary.                                                           ||
+########################################################################
 [END: FEATURE] */}
 <PriceSummary />
 ```
@@ -178,7 +184,7 @@ See [docs/compatibility.md](docs/compatibility.md) for the compatibility matrix.
 
 See [docs/installation.md](docs/installation.md).
 
-Current version: `0.1.0`.
+Current version: `0.1.1`.
 
 For Codex-style local skills, install the contents of the `skill/` directory as a skill named `comment-block`.
 
@@ -224,10 +230,13 @@ After:
 
 ```tsx
 {/* [START: FEATURE]
-Title: FINAL PRICE CALCULATION
-Date: 2026-04-24
-
-Centralizes subtotal, discount, and total rules displayed in the summary.
+########################################################################
+|| Title: FINAL PRICE CALCULATION                                     ||
+|| Date: 2026-04-24                                                   ||
+||                                                                    ||
+|| Centralizes subtotal, discount, and total rules displayed in the   ||
+|| summary.                                                           ||
+########################################################################
 [END: FEATURE] */}
 <PriceSummary />
 ```
@@ -242,6 +251,7 @@ Comment Block prioritizes syntactically valid edits:
 - do not insert comments inside JSX prop lists or tag attributes;
 - do not insert comments in strict JSON;
 - do not split a syntactic construct unless the language allows it;
+- keep the `#` border and `||` side rails inside the language-appropriate comment wrapper;
 - prefer inserting immediately before or after a complete node, declaration, selector, block, or section;
 - ask for clarification when the target location cannot be inferred confidently.
 

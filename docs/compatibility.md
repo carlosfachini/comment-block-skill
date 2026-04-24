@@ -4,6 +4,8 @@ Comment Block is language-aware but intentionally conservative. It should prefer
 
 The skill is generic. It is not coupled to a specific app, framework, component name, route, or repository structure.
 
+The internal Comment Block frame uses `#` border lines and `||` side rails. The outer comment wrapper changes by language.
+
 ## Compatible AI Tools
 
 | Tool type | Compatibility |

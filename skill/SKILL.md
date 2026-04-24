@@ -5,7 +5,7 @@ description: Insert structured START/END code comment blocks around features, se
 
 # Comment Block
 
-Insert structured comments directly into user code around a complete feature, section, or logical block.
+Insert structured, visually framed comments directly into user code around a complete feature, section, or logical block.
 
 ## Operating Modes
 
@@ -52,16 +52,26 @@ Proceed only after confirmation. If the user already supplied exact content and 
 
 ## Syntax Selection
 
-Use the smallest valid comment form for the current language context.
+Use the smallest valid comment wrapper for the current language context. Inside that wrapper, always use the Comment Block visual frame:
+
+- A `[START: TYPE]` line.
+- A full-width `#` border line.
+- Metadata and body lines wrapped with `||` side rails.
+- A full-width `#` border line.
+- An `[END: TYPE]` line.
+
+Prefer a readable fixed frame width around 72 characters when practical. Pad `||` lines with spaces so the closing `||` aligns. If content is longer than the frame width, wrap it across multiple `||` lines instead of widening the frame excessively.
 
 ### HTML And Vue Templates
 
 ```html
 <!-- [START: FEATURE]
-Title: HERO SECTION
-Date: 2026-04-24
-
-Defines the main visible landing section.
+########################################################################
+|| Title: HERO SECTION                                                ||
+|| Date: 2026-04-24                                                   ||
+||                                                                    ||
+|| Defines the main visible landing section.                          ||
+########################################################################
 [END: FEATURE] -->
 <section>...</section>
 ```
@@ -72,10 +82,12 @@ Use JSX block comments outside prop lists and inside JSX expression braces:
 
 ```tsx
 {/* [START: FEATURE]
-Title: FINAL PRICE CALCULATION
-Date: 2026-04-24
-
-Centralizes subtotal, discount, and total rules.
+########################################################################
+|| Title: FINAL PRICE CALCULATION                                     ||
+|| Date: 2026-04-24                                                   ||
+||                                                                    ||
+|| Centralizes subtotal, discount, and total rules.                   ||
+########################################################################
 [END: FEATURE] */}
 <PriceSummary />
 ```
@@ -86,10 +98,12 @@ In normal JavaScript or TypeScript regions of a JSX/TSX file, use `/* */`.
 
 ```js
 /* [START: FEATURE]
-Title: FINAL PRICE CALCULATION
-Date: 2026-04-24
-
-Centralizes subtotal, discount, and total rules.
+########################################################################
+|| Title: FINAL PRICE CALCULATION                                     ||
+|| Date: 2026-04-24                                                   ||
+||                                                                    ||
+|| Centralizes subtotal, discount, and total rules.                   ||
+########################################################################
 [END: FEATURE] */
 ```
 
@@ -97,18 +111,20 @@ Centralizes subtotal, discount, and total rules.
 
 ```python
 # [START: FEATURE]
-# Title: FINAL PRICE CALCULATION
-# Date: 2026-04-24
-#
-# Centralizes subtotal, discount, and total rules.
+# ######################################################################
+# || Title: FINAL PRICE CALCULATION                                   ||
+# || Date: 2026-04-24                                                 ||
+# ||                                                                  ||
+# || Centralizes subtotal, discount, and total rules.                 ||
+# ######################################################################
 # [END: FEATURE]
 ```
 
 ## Formatting Rules
 
 - Preserve surrounding indentation.
-- Add exactly one blank line between metadata and body.
+- Add exactly one empty `||                                                                    ||` rail line between metadata and body.
 - Add `Author: ...` immediately after `Date: ...` when author is included.
 - Keep title uppercase in the inserted block.
-- Do not add decorative separators.
+- Always include the visual `#` border and `||` side rails.
 - Prefer ASCII punctuation unless the surrounding file already uses a different convention.

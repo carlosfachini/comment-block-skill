@@ -1,9 +1,11 @@
 <template>
   <!-- [START: FEATURE]
-  Title: HERO SECTION
-  Date: 2026-04-24
-
-  Defines the main visible landing section.
+  ########################################################################
+  || Title: HERO SECTION                                                ||
+  || Date: 2026-04-24                                                   ||
+  ||                                                                    ||
+  || Defines the main visible landing section.                          ||
+  ########################################################################
   [END: FEATURE] -->
   <section class="hero">
     <h1>Comment Block</h1>
