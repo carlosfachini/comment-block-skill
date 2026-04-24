@@ -1,0 +1,10 @@
+/* [START: SECTION]
+Title: HERO SECTION STYLES
+Date: 2026-04-24
+
+Defines the layout and visual treatment for the landing hero.
+[END: SECTION] */
+.hero {
+  display: grid;
+  gap: 1rem;
+}

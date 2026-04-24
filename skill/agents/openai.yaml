@@ -1,0 +1,3 @@
+display_name: Comment Block
+short_description: Insert structured START/END comments around code blocks.
+default_prompt: Use Comment Block to add a structured comment around the relevant feature, section, or logical block in the current code.
