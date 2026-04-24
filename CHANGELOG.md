@@ -4,6 +4,7 @@
 
 - Fixed Comment Block formatting instructions to require the visual `#` border and `||` side rails.
 - Updated README and examples to match the framed comment output.
+- Added author and source metadata to installed skill files.
 
 ## 0.1.0 - 2026-04-24
 

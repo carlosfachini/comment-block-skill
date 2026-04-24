@@ -103,6 +103,8 @@ For release downloads, package at least:
 
 ```text
 skill/
+  SKILL.md
+  METADATA.md
 README.md
 LICENSE
 CHANGELOG.md

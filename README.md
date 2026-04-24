@@ -17,6 +17,9 @@ Comment Block helps an AI agent:
 
 The public name is **Comment Block**. The technical skill name is `comment-block`.
 
+Author: Carlos Fachini  
+Source: <https://github.com/carlosfachini/comment-block-skill>
+
 ## Compatible AI Tools
 
 Comment Block is intended for:

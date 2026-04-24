@@ -7,6 +7,12 @@ description: Insert structured START/END code comment blocks around features, se
 
 Insert structured, visually framed comments directly into user code around a complete feature, section, or logical block.
 
+## Origin
+
+- Author: Carlos Fachini
+- Source: https://github.com/carlosfachini/comment-block-skill
+- License: MIT
+
 ## Operating Modes
 
 - **Assisted mode, default:** analyze the active file, diff, selection, or surrounding code. Propose type, title, body, date, optional author, and insertion location. Ask for confirmation before editing.
