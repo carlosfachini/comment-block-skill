@@ -178,6 +178,8 @@ See [docs/compatibility.md](docs/compatibility.md) for the compatibility matrix.
 
 See [docs/installation.md](docs/installation.md).
 
+Current version: `0.1.0`.
+
 For Codex-style local skills, install the contents of the `skill/` directory as a skill named `comment-block`.
 
 Example:
@@ -197,6 +199,16 @@ Common mappings:
 | Claude Code | `CLAUDE.md` or an imported Markdown instruction file |
 | Cursor | `.cursor/rules/comment-block.mdc` or project/user rules |
 | Other AI coding CLIs | The tool's custom instructions or rules location |
+
+## Versioning And Releases
+
+Comment Block uses semantic versioning and GitHub Releases.
+
+- Source version: [VERSION](VERSION)
+- Release history: [CHANGELOG.md](CHANGELOG.md)
+- Release process: [docs/releasing.md](docs/releasing.md)
+
+GitHub shows the latest version in the repository sidebar after a Git tag is published and a GitHub Release is created from that tag.
 
 ## Before And After
 
