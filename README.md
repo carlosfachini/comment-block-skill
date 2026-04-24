@@ -202,13 +202,15 @@ Common mappings:
 
 ## Versioning And Releases
 
-Comment Block uses semantic versioning and GitHub Releases.
+Comment Block uses semantic versioning and GitHub Releases. Releases are automated from the `VERSION` file.
 
 - Source version: [VERSION](VERSION)
 - Release history: [CHANGELOG.md](CHANGELOG.md)
 - Release process: [docs/releasing.md](docs/releasing.md)
 
-GitHub shows the latest version in the repository sidebar after a Git tag is published and a GitHub Release is created from that tag.
+When a commit is pushed to `main`, GitHub Actions reads `VERSION`. If the matching tag does not exist yet, it creates the tag, publishes a GitHub Release, and attaches a `.zip` archive of the skill.
+
+GitHub shows the latest version in the repository sidebar after the release is published.
 
 ## Before And After
 

@@ -4,6 +4,8 @@ Comment Block uses semantic versioning and GitHub Releases.
 
 The current source version is stored in `VERSION`. Release notes live in `CHANGELOG.md`.
 
+Releases are automated by `.github/workflows/release.yml`.
+
 ## Version Numbers
 
 Use:
@@ -19,9 +21,30 @@ Examples:
 - `v0.1.1`: documentation-only fix;
 - `v1.0.0`: stable public release.
 
-## First Release
+## Automatic Release Flow
 
-After committing the initial files:
+For each release:
+
+1. Update `VERSION`.
+2. Add a matching entry to `CHANGELOG.md`.
+3. Commit the changes.
+4. Push to `main`.
+
+The GitHub Actions workflow will:
+
+1. read `VERSION`;
+2. create a tag like `v0.2.0` if it does not already exist;
+3. extract release notes from the matching `CHANGELOG.md` section;
+4. publish a GitHub Release;
+5. attach a release archive named `comment-block-skill-vX.Y.Z.zip`.
+
+If the tag already exists, the workflow skips release creation.
+
+## Manual First Release
+
+Use this only if you want to create the tag and release manually instead of using the workflow.
+
+After committing the files:
 
 ```bash
 git tag v0.1.0
@@ -47,14 +70,12 @@ After publishing, GitHub will show the release count and latest version in the r
 1. Update `VERSION`.
 2. Add a new entry to `CHANGELOG.md`.
 3. Commit the changes.
-4. Tag the commit.
-5. Push the commit and tag.
-6. Create a GitHub Release from the tag.
+4. Push to `main`.
 
 Example:
 
 ```bash
-git tag v0.2.0
+git add .
+git commit -m "Release v0.2.0"
 git push origin main
-git push origin v0.2.0
 ```
